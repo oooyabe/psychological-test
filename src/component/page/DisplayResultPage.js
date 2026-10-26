@@ -9,7 +9,7 @@ export default function DisplayResultPage({nextStep}) {
       <MobileFrame>
         <div>
           <div>
-            顯示我的失控可頌
+            顯示我的靈魂兔子
           </div>
             <div 
               className={` bg-[#89BCFF] w-full rounded-full text-white 

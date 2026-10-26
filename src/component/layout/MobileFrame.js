@@ -1,16 +1,26 @@
+
 'use client';
 
-export default function MobileFrame({children}) {
-
+export default function MobileFrame({ children }) {
   return (
-    <>
-      <div className="w-[33%] min-w-[380px] max-w-[420px] h-[85%] p-[52px] bg-white 
-        rounded-2xl flex justify-center items-center
-         relative overflow-hidden
-      ">
-        {children}
-      </div>
-    </>
+    <div
+      className="
+        relative
+        flex
+        h-[100dvh]
+        min-h-0
+        w-full
+        items-center
+        justify-center
+        overflow-hidden
+        bg-white
+        sm:h-[min(844px,calc(100dvh-32px))]
+        sm:w-[min(390px,calc(100vw-32px))]
+        sm:rounded-[32px]
+        sm:shadow-xl
+      "
+    >
+      {children}
+    </div>
   );
-  
 }
