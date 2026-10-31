@@ -1,6 +1,11 @@
 @import "tailwindcss";
+
 html, body {
-    background-color: #ffffff; /* 強制網頁最底層為純白 */
-    overflow: hidden;         /* 防止整頁被拉動或產生手機瀏覽器的彈性灰底 */
-    overscroll-behavior: none; /* 防止手機下拉重新整理的空白灰底 */
-  }
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  overflow: hidden;
+  overscroll-behavior: none;
+}
