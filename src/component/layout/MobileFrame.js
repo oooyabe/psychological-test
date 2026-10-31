@@ -7,25 +7,23 @@ export default function MobileFrame({ children }) {
         relative
         flex
         w-full
+        h-[100dvh]
         flex-col
         items-center
         justify-between
         bg-white
-        
-        /* 📱 手機真實裝置（預設）：強制滿版、用 bg-white 與 !overflow-hidden 封鎖滾動與灰底 */
-        h-[100dvh]
-        w-[100vw]
-        !overflow-hidden
-        
-        /* 💻 電腦桌機（sm 斷點以上）：自動恢復精緻的手機外框、圓角與陰影 */
-        sm:h-[min(844px,calc(100dvh-32px))]
-        sm:w-[min(390px,calc(100vw-32px))]
-        sm:rounded-[32px]
-        sm:shadow-2xl
-        sm:!overflow-hidden
+        overflow-hidden
+        mx-auto
       "
     >
-      <div className="relative flex h-full w-full flex-col overflow-hidden bg-white">
+      {/* 🌟 讓背景圖層固定在最底層，絕對不會跟著內容上下滾動或消失 */}
+      <div 
+        className="absolute inset-0 z-0 bg-cover bg-center"
+        style={{ backgroundImage: "url('/你的背景圖片路徑.jpg')" }}
+      />
+
+      {/* 上層內容區塊（帶有 relative 與 z-10 確保蓋在背景之上） */}
+      <div className="relative z-10 flex h-full w-full flex-col overflow-hidden">
         {children}
       </div>
     </div>
