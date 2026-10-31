@@ -10,11 +10,11 @@ export default function MobileFrame({ children }) {
         flex-col
         items-center
         justify-between
-        bg-[#2B1D11]
+        bg-white
         
-        /* 📱 手機真實裝置（預設）：強制滿版、用 !overflow-hidden 強制封鎖所有上下滑動與滾輪 */
+        /* 📱 手機真實裝置（預設）：強制滿版、用 bg-white 與 !overflow-hidden 封鎖滾動與灰底 */
         h-[100dvh]
-        min-h-[100dvh]
+        w-[100vw]
         !overflow-hidden
         
         /* 💻 電腦桌機（sm 斷點以上）：自動恢復精緻的手機外框、圓角與陰影 */
@@ -25,7 +25,9 @@ export default function MobileFrame({ children }) {
         sm:!overflow-hidden
       "
     >
-      {children}
+      <div className="relative flex h-full w-full flex-col overflow-hidden bg-white">
+        {children}
+      </div>
     </div>
   );
 }
