@@ -7,7 +7,7 @@ export default function MobileFrame({ children }) {
         relative
         flex
         w-full
-        h-[100dvh]
+        min-h-[100svh]
         flex-col
         items-center
         justify-between
@@ -16,7 +16,7 @@ export default function MobileFrame({ children }) {
         mx-auto
       "
     >
-      <div className="relative flex h-full w-full flex-col overflow-hidden bg-white">
+      <div className="relative flex min-h-[100svh] w-full flex-col overflow-hidden bg-white">
         {children}
       </div>
     </div>
