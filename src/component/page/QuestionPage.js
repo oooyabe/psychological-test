@@ -54,22 +54,22 @@ const questions = [
 
 const colorStyles = {
   green: {
-    background: 'rgba(224, 235, 211, 0.45)',
+    background: 'rgba(224, 235, 211, 0.85)',
     border: '#C4D0AD',
     accent: '#73885C',
   },
   pink: {
-    background: 'rgba(246, 222, 220, 0.45)',
+    background: 'rgba(246, 222, 220, 0.85)',
     border: '#E4C0BA',
     accent: '#B77C79',
   },
   blue: {
-    background: 'rgba(220, 233, 241, 0.48)',
+    background: 'rgba(220, 233, 241, 0.88)',
     border: '#B8CDDA',
     accent: '#718FA7',
   },
   purple: {
-    background: 'rgba(231, 220, 241, 0.48)',
+    background: 'rgba(231, 220, 241, 0.88)',
     border: '#CDBBDF',
     accent: '#8E78A8',
   },
@@ -103,7 +103,7 @@ export default function QuestionPage({ questionIndex, nextStep }) {
     <MobileFrame>
       <main className="relative flex h-full w-full flex-col overflow-hidden text-[#513D2B]">
 
-        {/* 背景圖片：改用 Next.js Image 並加上 sizes 屬性以解決效能警告 */}
+        {/* 背景圖片：完美對齊滿版 */}
         <div className="pointer-events-none absolute inset-0 z-0">
           <Image
             src="/1.question/bg.jpg"
@@ -114,27 +114,28 @@ export default function QuestionPage({ questionIndex, nextStep }) {
           />
         </div>
 
-        {/* 內容區塊：移除 overflow-y-auto，改為緊湊排版，防止手機出現滾輪 */}
-        <section className="relative z-10 flex h-full w-full flex-col justify-center px-6 py-8 sm:px-7">
+        {/* 內容區塊：微調定位區間 */}
+        <div className="absolute inset-x-4 top-[17%] bottom-[10%] z-10 flex flex-col justify-between items-center">
 
-          {/* 具設計感的題數顯示 */}
-          <div className="mb-2 flex items-center justify-center gap-3 text-center">
-            <span className="h-px w-8 bg-gradient-to-r from-transparent to-[#C8A86D]" />
-            <span className="font-serif text-[13px] font-bold tracking-[0.25em] text-[#a6816b]">
-              ✦ {formattedIndex} ✦
-            </span>
-            <span className="h-px w-8 bg-gradient-to-l from-transparent to-[#C8A86D]" />
+          {/* 上方：題數與題目（透過 pt-2 讓題目整體往下推，更靠近下方的選項） */}
+          <div className="flex w-full flex-col items-center pt-2">
+            <div className="mb-2 flex items-center justify-center gap-3 text-center">
+              <span className="h-px w-6 bg-gradient-to-r from-transparent to-[#C8A86D]" />
+              <span className="font-serif text-[12px] font-bold tracking-[0.25em] text-[#a6816b]">
+                ✦ {formattedIndex} ✦
+              </span>
+              <span className="h-px w-6 bg-gradient-to-l from-transparent to-[#C8A86D]" />
+            </div>
+
+            <div className="text-center px-2">
+              <h1 className="font-serif text-[19px] font-medium leading-[1.5] tracking-[0.035em] text-[#513D2B] drop-shadow-[0_1px_2px_rgba(255,255,255,0.9)]">
+                {currentQuestion.title}
+              </h1>
+            </div>
           </div>
 
-          {/* 題目文字 */}
-          <div className="relative mx-auto mb-4 w-full max-w-[310px] px-2 text-center">
-            <h1 className="relative font-serif text-[19px] font-medium leading-[1.6] tracking-[0.035em] text-[#513D2B] drop-shadow-[0_1px_2px_rgba(255,255,255,0.9)]">
-              {currentQuestion.title}
-            </h1>
-          </div>
-
-          {/* 四個粉彩選項 */}
-          <div className="flex w-full flex-col gap-2.5">
+          {/* 中間：2x2 網格選項（維持大器飽滿的尺寸） */}
+          <div className="grid w-full grid-cols-2 gap-3.5 my-auto px-1">
             {currentQuestion.options.map((option, index) => {
               const style = colorStyles[option.color];
 
@@ -144,28 +145,28 @@ export default function QuestionPage({ questionIndex, nextStep }) {
                   type="button"
                   onClick={() => clickAnswer(option)}
                   className="
-                    group relative flex min-h-[52px] w-full items-center gap-3
-                    overflow-hidden rounded-[18px] border px-3 py-2.5 text-left
-                    shadow-[0_2px_8px_rgba(115,83,44,0.05)]
+                    group relative flex flex-col justify-between min-h-[145px] w-full p-4 text-left
+                    overflow-hidden rounded-[22px] border
+                    shadow-[0_4px_14px_rgba(115,83,44,0.1)]
                     transition-all duration-300
-                    hover:-translate-y-0.5
-                    hover:bg-white/70
-                    hover:shadow-[0_4px_12px_rgba(115,83,44,0.1)]
+                    hover:-translate-y-1
+                    hover:bg-white/95
+                    hover:shadow-[0_6px_20px_rgba(115,83,44,0.2)]
                     active:translate-y-0
                     focus-visible:outline-none
                     focus-visible:ring-2 focus-visible:ring-[#B58A43]
-                    focus-visible:ring-offset-2
                   "
                   style={{
                     backgroundColor: style.background,
                     borderColor: style.border,
                   }}
                 >
+                  {/* A, B, C, D 代號徽章 */}
                   <span
                     className="
-                      relative flex h-7 w-7 shrink-0 items-center justify-center
-                      rounded-full border bg-white/60 font-serif text-sm italic
-                      transition-transform duration-300 group-hover:scale-105
+                      flex h-7 w-7 items-center justify-center
+                      rounded-full border bg-white/90 font-serif text-[12px] italic
+                      shadow-sm transition-transform duration-300 group-hover:scale-110
                     "
                     style={{
                       borderColor: style.border,
@@ -175,15 +176,19 @@ export default function QuestionPage({ questionIndex, nextStep }) {
                     {String.fromCharCode(65 + index)}
                   </span>
 
-                  <span className="relative min-w-0 flex-1 text-[12.5px] font-medium leading-[1.6] tracking-[0.01em] text-[#594633]">
+                  {/* 選項文字 */}
+                  <span className="mt-2 text-[12.5px] font-medium leading-[1.5] tracking-[0.01em] text-[#594633]">
                     {option.title}
                   </span>
                 </button>
               );
             })}
           </div>
-          
-        </section>
+
+          {/* 底部預留空間剛好貼齊兔子 */}
+          <div className="h-2" />
+
+        </div>
       </main>
     </MobileFrame>
   );
