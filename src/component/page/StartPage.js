@@ -9,16 +9,16 @@ export default function StartPage({ nextStep }) {
       <div className="relative isolate flex h-full w-full flex-col justify-between overflow-hidden px-6 py-6">
 
         {/* 背景圖片 */}
-        <div className="absolute inset-0 z-0">
-  <Image 
-    src="/bg-2.jpg" 
-    alt="background" 
-    fill 
-    sizes="390px"
-    className="object-cover object-center" 
-    priority 
-  />
-</div>
+        <div className="pointer-events-none absolute inset-0 z-0">
+          <Image
+            src="/0.start/bg-2.jpg"
+            alt="夢幻童話森林與白兔"
+            fill
+            priority
+            sizes="(max-width: 640px) 100vw, 390px"
+            className="object-cover object-bottom"
+          />
+        </div>
 
         {/* 柔和暖色濾鏡 */}
         <div
