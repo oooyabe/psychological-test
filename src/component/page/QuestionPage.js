@@ -114,11 +114,11 @@ export default function QuestionPage({ questionIndex, nextStep }) {
           />
         </div>
 
-        {/* 內容區塊：微調定位區間 */}
-        <div className="absolute inset-x-4 top-[17%] bottom-[10%] z-10 flex flex-col justify-between items-center">
+        {/* 內容區塊：微調 top 與 bottom 區間，讓整體畫面更往下延伸、比例更和諧 */}
+        <div className="absolute inset-x-4 top-[20%] bottom-[14%] z-10 flex flex-col justify-between items-center">
 
-          {/* 上方：題數與題目（透過 pt-2 讓題目整體往下推，更靠近下方的選項） */}
-          <div className="flex w-full flex-col items-center pt-2">
+          {/* 上方：題數與題目 */}
+          <div className="flex w-full flex-col items-center">
             <div className="mb-2 flex items-center justify-center gap-3 text-center">
               <span className="h-px w-6 bg-gradient-to-r from-transparent to-[#C8A86D]" />
               <span className="font-serif text-[12px] font-bold tracking-[0.25em] text-[#a6816b]">
@@ -134,7 +134,7 @@ export default function QuestionPage({ questionIndex, nextStep }) {
             </div>
           </div>
 
-          {/* 中間：2x2 網格選項（維持大器飽滿的尺寸） */}
+          {/* 中間：2x2 網格選項 */}
           <div className="grid w-full grid-cols-2 gap-3.5 my-auto px-1">
             {currentQuestion.options.map((option, index) => {
               const style = colorStyles[option.color];
@@ -184,9 +184,6 @@ export default function QuestionPage({ questionIndex, nextStep }) {
               );
             })}
           </div>
-
-          {/* 底部預留空間剛好貼齊兔子 */}
-          <div className="h-2" />
 
         </div>
       </main>

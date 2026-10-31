@@ -25,7 +25,10 @@ export default function MobileFrame({ children }) {
         sm:!overflow-hidden
       "
     >
-      {children}
+      {/* 🌟 額外加上一層 overflow-hidden，強制包住所有子頁面，確保絕不出框、絕不出現滾輪 */}
+      <div className="relative flex h-full w-full flex-col overflow-hidden">
+        {children}
+      </div>
     </div>
   );
 }
