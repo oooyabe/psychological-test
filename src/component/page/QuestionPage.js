@@ -2,6 +2,7 @@
 
 import MobileFrame from '@/component/layout/MobileFrame';
 import { usePsyStore } from '@/app/store/store';
+import Image from 'next/image';
 
 const questions = [
   {
@@ -102,23 +103,22 @@ export default function QuestionPage({ questionIndex, nextStep }) {
     <MobileFrame>
       <main className="relative flex h-full w-full flex-col overflow-hidden text-[#513D2B]">
 
-        {/* 背景圖片 */}
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-0 z-0 bg-white"
-          style={{
-            backgroundImage: "url('/1.question/bg.jpg')",
-            backgroundPosition: 'center center',
-            backgroundRepeat: 'no-repeat',
-            backgroundSize: '100% 100%',
-          }}
-        />
+        {/* 背景圖片：改用 Next.js Image 並加上 sizes 屬性以解決效能警告 */}
+        <div className="pointer-events-none absolute inset-0 z-0">
+          <Image
+            src="/1.question/bg.jpg"
+            alt="題目背景"
+            fill
+            sizes="(max-width: 640px) 100vw, 390px"
+            className="object-cover object-center"
+          />
+        </div>
 
-        {/* 內容區塊：將整體位置往上一點（pt-20） */}
-        <section className="relative z-10 flex min-h-0 flex-1 flex-col overflow-y-auto px-6 pb-6 pt-20 sm:px-7">
+        {/* 內容區塊：移除 overflow-y-auto，改為緊湊排版，防止手機出現滾輪 */}
+        <section className="relative z-10 flex h-full w-full flex-col justify-center px-6 py-8 sm:px-7">
 
-          {/* 具設計感的題數顯示：兩側加上金色線條與星星裝飾 */}
-          <div className="mb-3 flex items-center justify-center gap-3 text-center">
+          {/* 具設計感的題數顯示 */}
+          <div className="mb-2 flex items-center justify-center gap-3 text-center">
             <span className="h-px w-8 bg-gradient-to-r from-transparent to-[#C8A86D]" />
             <span className="font-serif text-[13px] font-bold tracking-[0.25em] text-[#a6816b]">
               ✦ {formattedIndex} ✦
@@ -126,15 +126,15 @@ export default function QuestionPage({ questionIndex, nextStep }) {
             <span className="h-px w-8 bg-gradient-to-l from-transparent to-[#C8A86D]" />
           </div>
 
-          {/* 題目文字（套用自訂斷行） */}
-          <div className="relative mx-auto w-full max-w-[310px] px-2 py-2 text-center">
-            <h1 className="relative font-serif text-[20px] font-medium leading-[1.7] tracking-[0.035em] text-[#513D2B] drop-shadow-[0_1px_2px_rgba(255,255,255,0.9)]">
+          {/* 題目文字 */}
+          <div className="relative mx-auto mb-4 w-full max-w-[310px] px-2 text-center">
+            <h1 className="relative font-serif text-[19px] font-medium leading-[1.6] tracking-[0.035em] text-[#513D2B] drop-shadow-[0_1px_2px_rgba(255,255,255,0.9)]">
               {currentQuestion.title}
             </h1>
           </div>
 
           {/* 四個粉彩選項 */}
-          <div className="mt-2 flex w-full flex-col gap-3">
+          <div className="flex w-full flex-col gap-2.5">
             {currentQuestion.options.map((option, index) => {
               const style = colorStyles[option.color];
 
@@ -144,8 +144,8 @@ export default function QuestionPage({ questionIndex, nextStep }) {
                   type="button"
                   onClick={() => clickAnswer(option)}
                   className="
-                    group relative flex min-h-[58px] w-full items-center gap-3
-                    overflow-hidden rounded-[20px] border px-3 py-3 text-left
+                    group relative flex min-h-[52px] w-full items-center gap-3
+                    overflow-hidden rounded-[18px] border px-3 py-2.5 text-left
                     shadow-[0_2px_8px_rgba(115,83,44,0.05)]
                     transition-all duration-300
                     hover:-translate-y-0.5
@@ -163,7 +163,7 @@ export default function QuestionPage({ questionIndex, nextStep }) {
                 >
                   <span
                     className="
-                      relative flex h-8 w-8 shrink-0 items-center justify-center
+                      relative flex h-7 w-7 shrink-0 items-center justify-center
                       rounded-full border bg-white/60 font-serif text-sm italic
                       transition-transform duration-300 group-hover:scale-105
                     "
@@ -175,7 +175,7 @@ export default function QuestionPage({ questionIndex, nextStep }) {
                     {String.fromCharCode(65 + index)}
                   </span>
 
-                  <span className="relative min-w-0 flex-1 text-[13px] font-medium leading-[1.8] tracking-[0.01em] text-[#594633]">
+                  <span className="relative min-w-0 flex-1 text-[12.5px] font-medium leading-[1.6] tracking-[0.01em] text-[#594633]">
                     {option.title}
                   </span>
                 </button>

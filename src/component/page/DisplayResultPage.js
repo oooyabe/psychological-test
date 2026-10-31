@@ -9,12 +9,13 @@ export default function DisplayResultPage({ nextStep }) {
       <MobileFrame>
         <main className="relative flex h-full w-full flex-col justify-between overflow-hidden text-[#513D2B] bg-white">
 
-          {/* 背景圖片層：滿版鋪滿，營造沉浸式童話仙境氛圍 */}
+          {/* 背景圖片層：加上 sizes 屬性以解決效能警告 */}
           <div aria-hidden="true" className="absolute inset-0 z-0">
             <Image 
               src="/3/result-bg.jpg" 
               alt="Display Result Background"
               fill
+              sizes="(max-width: 640px) 100vw, 390px"
               className="object-cover object-center"
               priority
             />
@@ -29,7 +30,7 @@ export default function DisplayResultPage({ nextStep }) {
           </div>
 
           {/* 內容區塊 */}
-          <section className="relative z-20 flex h-full w-full flex-col justify-between px-8 py-6 sm:px-10 sm:py-8">
+          <section className="relative z-25 flex h-full w-full flex-col justify-between px-8 py-6 sm:px-10 sm:py-8">
             
             {/* 上方標題區塊 */}
             <div className="mt-1 flex flex-col items-center text-center">
@@ -38,7 +39,7 @@ export default function DisplayResultPage({ nextStep }) {
               </h2>
             </div>
 
-            {/* 腳印區塊：將 right-6 改為 right-24，讓腳印整體明顯往左移動 */}
+            {/* 腳印按鈕區塊 */}
             <div className="absolute bottom-6 right-10 z-30 flex items-center justify-center">
               <button
                 type="button"
@@ -54,7 +55,7 @@ export default function DisplayResultPage({ nextStep }) {
                   focus-visible:outline-none
                 "
               >
-                {/* 🐰 純 CSS 繪製的兔子腳印（帶有柔和半透明色澤與微光） */}
+                {/* 🐰 純 CSS 繪製的兔子腳印 */}
                 <div className="relative h-8 w-7 drop-shadow-[0_2px_4px_rgba(120,95,60,0.25)] transition-all duration-300 group-hover:brightness-110">
                   
                   {/* 大主掌印 */}
