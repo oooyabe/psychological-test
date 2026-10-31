@@ -1,10 +1,19 @@
 @import "tailwindcss";
 
+/* 強制鎖定 html 與 body，完全禁止任何滾動與彈性回彈 */
 html, body {
   margin: 0;
   padding: 0;
   width: 100%;
-  background-color: #ffffff;
-  overflow-x: hidden;
-  overscroll-behavior-y: none; /* 防止上下拉動的回彈灰底 */
+  height: 100%;
+  position: fixed;
+  overflow: hidden !important;
+  overscroll-behavior: none !important;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-x pan-y; /* 限制觸控行為 */
+}
+
+/* 確保下層元素也不會意外觸發捲動 */
+* {
+  box-sizing: border-box;
 }
