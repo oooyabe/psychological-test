@@ -40,7 +40,7 @@ export default function DisplayResultPage({ nextStep }) {
             </div>
 
             {/* 下方：腳印按鈕區塊 */}
-            <div className="absolute bottom-20 right-18 z-30 flex items-center justify-center">
+            <div className="absolute bottom-20 right-21 z-30 flex items-center justify-center">
               <button
                 type="button"
                 onClick={nextStep}
