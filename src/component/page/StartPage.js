@@ -29,7 +29,7 @@ export default function StartPage({ nextStep }) {
         />
 
         {/* 上方：標題與故事文案區 */}
-        <div className="relative z-10 flex w-full flex-col items-center text-center pt-10">
+        <div className="relative z-10 flex w-full flex-col items-center text-center pt-3">
           
           <p className="mb-2 text-[10px] font-medium tracking-[0.35em] text-[#a6816b]">
             A LITTLE WONDERLAND
@@ -73,7 +73,7 @@ export default function StartPage({ nextStep }) {
         </div>
 
         {/* 按鈕區：往上提到兔子頭部上方（減少 pb 留白） */}
-        <div className="relative z-30 flex w-full justify-center pb-145">
+        <div className="relative z-30 flex w-full justify-center pb-153">
           <button
             type="button"
             onClick={nextStep}
