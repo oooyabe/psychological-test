@@ -73,7 +73,7 @@ export default function StartPage({ nextStep }) {
         </div>
 
         {/* 按鈕區：往上提到兔子頭部上方（減少 pb 留白） */}
-        <div className="relative z-30 flex w-full justify-center pb-145">
+        <div className="relative z-30 flex w-full justify-center pb-130">
           <button
             type="button"
             onClick={nextStep}
