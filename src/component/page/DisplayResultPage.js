@@ -16,12 +16,12 @@ export default function DisplayResultPage({ nextStep }) {
               alt="Display Result Background"
               fill
               sizes="(max-width: 640px) 100vw, 390px"
-              className="object-cover object-center animate-fade duration-1000"
+              className="object-cover object-center duration-1000"
               priority
             />
           </div>
 
-          {/* 🌟 豐富的魔法星光與微粒層（增加呼吸與閃爍動畫） */}
+          {/* 🌟 豐富的魔法星光與微粒層（保持背景微光閃爍） */}
           <div aria-hidden="true" className="pointer-events-none absolute inset-0 z-10 overflow-hidden">
             <span className="absolute left-[15%] top-[22%] animate-pulse text-sm text-[#E4C590] opacity-80 duration-1000">✨</span>
             <span className="absolute right-[18%] top-[20%] animate-ping text-xs text-[#E4C590] opacity-70 duration-1000" style={{ animationDelay: '400ms' }}>✦</span>
@@ -34,7 +34,7 @@ export default function DisplayResultPage({ nextStep }) {
           {/* 內容區塊：絕對定位 */}
           <div className="absolute inset-x-0 inset-y-0 z-20 flex flex-col justify-between px-6 py-8">
             
-            {/* 上方標題與神祕風文案區塊（加入由上而下的淡入滑入動畫） */}
+            {/* 上方標題與神祕風文案區塊 */}
             <div className="flex flex-col items-center pt-10 px-6 text-center animate-in fade-in slide-in-from-top-4 duration-700">
               <p className="mb-2 text-[10px] font-medium tracking-[0.3em] text-[#a6816b] opacity-90">
                 ✦ TICK TOCK, THE DOOR IS OPEN ✦
@@ -44,7 +44,7 @@ export default function DisplayResultPage({ nextStep }) {
               </h2>
             </div>
 
-            {/* 下方置中：質感咖啡色按鈕（加入由下而上的淡入動畫與呼吸浮動感） */}
+            {/* 下方置中：質感咖啡色按鈕（移除閃爍動畫，保持顏色穩定） */}
             <div className="flex flex-col items-center pb-10 z-30 animate-in fade-in slide-in-from-bottom-4 duration-700">
               <button
                 type="button"
@@ -61,7 +61,6 @@ export default function DisplayResultPage({ nextStep }) {
                   active:scale-95
                   focus-visible:outline-none
                   overflow-hidden group
-                  animate-pulse
                 "
               >
                 {/* 按鈕內的高光掃過特效 */}
