@@ -33,7 +33,7 @@ export default function DisplayResultPage({ nextStep }) {
           <div className="absolute inset-x-0 inset-y-0 z-20 flex flex-col justify-between px-6 py-8">
             
             {/* 上方標題與按鈕區塊：將 pt-12 調大（例如 pt-20），讓文字與按鈕整體往下移 */}
-            <div className="relative flex items-center justify-center pt-20 px-6">
+            <div className="relative flex items-center justify-center pt-12 px-6">
               <h2 className="font-serif text-[21px] font-bold tracking-[0.15em] text-[#593E2B] drop-shadow-[0_1px_3px_rgba(255,255,255,0.95)] text-center">
                 顯示我的靈魂兔子
               </h2>
