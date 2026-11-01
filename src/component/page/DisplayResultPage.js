@@ -23,11 +23,9 @@ export default function DisplayResultPage({ nextStep }) {
 
           {/* 🌟 豐富的魔法星光與微粒層（保持背景微光閃爍） */}
           <div aria-hidden="true" className="pointer-events-none absolute inset-0 z-10 overflow-hidden">
-            <span className="absolute left-[15%] top-[22%] animate-pulse text-sm text-[#E4C590] opacity-80 duration-1000">✨</span>
             <span className="absolute right-[18%] top-[20%] animate-ping text-xs text-[#E4C590] opacity-70 duration-1000" style={{ animationDelay: '400ms' }}>✦</span>
             <span className="absolute left-[12%] top-[52%] animate-ping text-[10px] text-[#F3E5CE] opacity-90 duration-1000" style={{ animationDelay: '300ms' }}>✦</span>
             <span className="absolute right-[14%] top-[55%] animate-pulse text-xs text-[#E4C590] opacity-90 duration-1500" style={{ animationDelay: '600ms' }}>⋆</span>
-            <span className="absolute left-[25%] top-[78%] animate-pulse text-xs text-[#E4C590] opacity-60">✨</span>
             <span className="absolute right-[25%] top-[80%] animate-ping text-[10px] text-[#F3E5CE] opacity-80 duration-1000" style={{ animationDelay: '800ms' }}>✦</span>
           </div>
 
@@ -66,7 +64,7 @@ export default function DisplayResultPage({ nextStep }) {
                 {/* 按鈕內的高光掃過特效 */}
                 <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/25 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
                 
-                揭曉我的靈魂兔子 ✨
+                揭曉我的靈魂兔子✨
               </button>
             </div>
 
