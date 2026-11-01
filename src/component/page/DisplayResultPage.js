@@ -33,42 +33,35 @@ export default function DisplayResultPage({ nextStep }) {
           <div className="absolute inset-x-0 inset-y-0 z-20 flex flex-col justify-between px-6 py-8">
             
             {/* 上方標題區塊：獨立置中 */}
-            <div className="flex flex-col items-center pt-16 px-6">
-              <h2 className="font-serif text-[21px] font-bold tracking-[0.15em] text-[#593E2B] drop-shadow-[0_1px_3px_rgba(255,255,255,0.95)] text-center">
+            <div className="flex flex-col items-center pt-14 px-6">
+              <h2 className="font-serif text-[22px] font-bold tracking-[0.15em] text-[#593E2B] drop-shadow-[0_1px_3px_rgba(255,255,255,0.95)] text-center">
                 顯示我的靈魂兔子
               </h2>
             </div>
 
-            {/* 下方右側：腳印按鈕區塊 */}
-            <div className="absolute bottom-16 right-10 z-30 flex items-center justify-center">
+            {/* 下方置中：乾淨俐落的「查看結果」按鈕 */}
+            <div className="flex flex-col items-center pb-10 z-30">
               <button
                 type="button"
                 onClick={nextStep}
                 aria-label="查看結果"
                 className="
-                  group relative flex items-center justify-center
-                  p-3 cursor-pointer
+                  relative px-12 py-3.5 rounded-full cursor-pointer
+                  bg-gradient-to-r from-[#593E2B] via-[#6B4C35] to-[#7D5A3F]
+                  text-[#FFFBF5] font-serif text-[16px] font-bold tracking-[0.2em]
+                  shadow-[0_6px_20px_rgba(89,62,43,0.35)]
+                  border border-[#E4C590]/50
                   transition-all duration-300
-                  hover:scale-125
+                  hover:scale-105 hover:shadow-[0_8px_25px_rgba(89,62,43,0.5)] hover:border-[#E4C590]
                   active:scale-95
-                  animate-bounce
                   focus-visible:outline-none
+                  overflow-hidden group
                 "
               >
-                {/* 🐰 純 CSS 繪製的兔子腳印 */}
-                <div className="relative h-8 w-7 drop-shadow-[0_3px_6px_rgba(120,95,60,0.35)] transition-all duration-300 group-hover:brightness-110">
-                  
-                  {/* 大主掌印 */}
-                  <div className="absolute bottom-0 left-1/2 -translate-x-1/2 h-4.5 w-6 rounded-[50%] bg-[#7D5A3F]" />
-
-                  {/* 上方三個小趾印 */}
-                  <div className="absolute top-0.5 left-0.5 h-3.5 w-2 rounded-[50%] bg-[#7D5A3F] -rotate-12" />
-                  <div className="absolute top-0 left-1/2 -translate-x-1/2 h-4 w-2 rounded-[50%] bg-[#7D5A3F]" />
-                  <div className="absolute top-0.5 right-0.5 h-3.5 w-2 rounded-[50%] bg-[#7D5A3F] rotate-12" />
-                </div>
-
-                {/* 點擊引導的微光呼吸環特效 */}
-                <span className="absolute inset-0 rounded-full border-2 border-[#C8A86D] animate-ping opacity-40 pointer-events-none" />
+                {/* 按鈕內的高光掃過特效 */}
+                <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/25 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+                
+                查看結果
               </button>
             </div>
 
