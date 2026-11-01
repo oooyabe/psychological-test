@@ -73,7 +73,7 @@ export default function StartPage({ nextStep }) {
         </div>
 
         {/* 按鈕區：咖啡色質感按鈕與「進入秘境」文字 */}
-        <div className="relative z-30 flex w-full justify-center pb-60">
+        <div className="relative z-30 flex w-full justify-center pb-75">
           <button
             type="button"
             onClick={nextStep}
@@ -88,7 +88,7 @@ export default function StartPage({ nextStep }) {
               active:scale-95 rounded-full
             "
           >
-            進入秘境 ✨
+            進入秘境
           </button>
         </div>
 
