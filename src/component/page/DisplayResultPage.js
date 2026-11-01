@@ -12,7 +12,7 @@ export default function DisplayResultPage({ nextStep }) {
           {/* 背景圖片層：滿版對齊 */}
           <div aria-hidden="true" className="absolute inset-0 z-0">
             <Image 
-              src="/3/result-bg.png" 
+              src="/3/result-bg.jpg" 
               alt="Display Result Background"
               fill
               sizes="(max-width: 640px) 100vw, 390px"
@@ -32,48 +32,45 @@ export default function DisplayResultPage({ nextStep }) {
           {/* 內容區塊：絕對定位 */}
           <div className="absolute inset-x-0 inset-y-0 z-20 flex flex-col justify-between px-6 py-8">
             
-            {/* 上方標題與按鈕區塊：將 pt-12 調大（例如 pt-20），讓文字與按鈕整體往下移 */}
-            <div className="relative flex items-center justify-center pt-12 px-6">
+            {/* 上方標題區塊：獨立置中 */}
+            <div className="flex flex-col items-center pt-16 px-6">
               <h2 className="font-serif text-[21px] font-bold tracking-[0.15em] text-[#593E2B] drop-shadow-[0_1px_3px_rgba(255,255,255,0.95)] text-center">
                 顯示我的靈魂兔子
               </h2>
-
-              {/* 腳印按鈕（定位在標題右側） */}
-              <div className="absolute right-6 flex items-center justify-center">
-                <button
-                  type="button"
-                  onClick={nextStep}
-                  aria-label="查看結果"
-                  className="
-                    group relative flex items-center justify-center
-                    p-2 cursor-pointer
-                    transition-all duration-300
-                    hover:scale-125
-                    active:scale-95
-                    animate-bounce
-                    focus-visible:outline-none
-                  "
-                >
-                  {/* 🐰 純 CSS 繪製的兔子腳印 */}
-                  <div className="relative h-7 w-6 drop-shadow-[0_3px_6px_rgba(120,95,60,0.35)] transition-all duration-300 group-hover:brightness-110">
-                    
-                    {/* 大主掌印 */}
-                    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 h-4 w-5 rounded-[50%] bg-[#7D5A3F]" />
-
-                    {/* 上方三個小趾印 */}
-                    <div className="absolute top-0.5 left-0.5 h-3 w-1.5 rounded-[50%] bg-[#7D5A3F] -rotate-12" />
-                    <div className="absolute top-0 left-1/2 -translate-x-1/2 h-3.5 w-1.5 rounded-[50%] bg-[#7D5A3F]" />
-                    <div className="absolute top-0.5 right-0.5 h-3 w-1.5 rounded-[50%] bg-[#7D5A3F] rotate-12" />
-                  </div>
-
-                  {/* 點擊引導的微光呼吸環特效 */}
-                  <span className="absolute inset-0 rounded-full border-2 border-[#C8A86D] animate-ping opacity-40 pointer-events-none" />
-                </button>
-              </div>
             </div>
 
-            {/* 下方保留空間 */}
-            <div className="h-10"></div>
+            {/* 下方右側：腳印按鈕區塊 */}
+            <div className="absolute bottom-16 right-10 z-30 flex items-center justify-center">
+              <button
+                type="button"
+                onClick={nextStep}
+                aria-label="查看結果"
+                className="
+                  group relative flex items-center justify-center
+                  p-3 cursor-pointer
+                  transition-all duration-300
+                  hover:scale-125
+                  active:scale-95
+                  animate-bounce
+                  focus-visible:outline-none
+                "
+              >
+                {/* 🐰 純 CSS 繪製的兔子腳印 */}
+                <div className="relative h-8 w-7 drop-shadow-[0_3px_6px_rgba(120,95,60,0.35)] transition-all duration-300 group-hover:brightness-110">
+                  
+                  {/* 大主掌印 */}
+                  <div className="absolute bottom-0 left-1/2 -translate-x-1/2 h-4.5 w-6 rounded-[50%] bg-[#7D5A3F]" />
+
+                  {/* 上方三個小趾印 */}
+                  <div className="absolute top-0.5 left-0.5 h-3.5 w-2 rounded-[50%] bg-[#7D5A3F] -rotate-12" />
+                  <div className="absolute top-0 left-1/2 -translate-x-1/2 h-4 w-2 rounded-[50%] bg-[#7D5A3F]" />
+                  <div className="absolute top-0.5 right-0.5 h-3.5 w-2 rounded-[50%] bg-[#7D5A3F] rotate-12" />
+                </div>
+
+                {/* 點擊引導的微光呼吸環特效 */}
+                <span className="absolute inset-0 rounded-full border-2 border-[#C8A86D] animate-ping opacity-40 pointer-events-none" />
+              </button>
+            </div>
 
           </div>
 

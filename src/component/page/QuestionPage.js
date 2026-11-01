@@ -101,17 +101,16 @@ export default function QuestionPage({ questionIndex, nextStep }) {
 
   return (
     <MobileFrame>
-      <main className="relative flex h-full w-full flex-col overflow-hidden text-[#513D2B] bg-[#FBF5E9]">
+      <main className="relative flex h-full w-full flex-col overflow-hidden text-[#513D2B]">
 
-        {/* 背景圖片：從 object-cover 改為 object-contain，確保上下圖案在手機上完整顯示不被裁切 */}
-        <div className="pointer-events-none absolute inset-0 z-0 flex items-center justify-center">
+        {/* 背景圖片：完美對齊滿版 */}
+        <div className="pointer-events-none absolute inset-0 z-0">
           <Image
             src="/1.question/bg.jpg"
             alt="題目背景"
             fill
             sizes="(max-width: 640px) 100vw, 390px"
-            className="object-contain object-center"
-            priority
+            className="object-cover object-center"
           />
         </div>
 
