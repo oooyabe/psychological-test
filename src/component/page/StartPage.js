@@ -63,7 +63,7 @@ export default function StartPage({ nextStep }) {
               style={{
                 textShadow: '0 1px 5px rgba(255, 249, 237, 0.95)',
               }}
-            >     
+            >    
               在光影交錯的奇幻仙境
               <br />
               循著心底微光探索未知的自己
@@ -72,24 +72,23 @@ export default function StartPage({ nextStep }) {
 
         </div>
 
-        {/* 按鈕區：往上提到兔子頭部上方（減少 pb 留白） */}
-        <div className="relative z-30 flex w-full justify-center pb-130">
+        {/* 按鈕區：咖啡色質感按鈕與「進入秘境」文字 */}
+        <div className="relative z-30 flex w-full justify-center pb-16">
           <button
             type="button"
             onClick={nextStep}
             className="
               flex items-center justify-center 
-              bg-gradient-to-r from-[#d4a373] to-[#c89665] 
-              px-8 py-3 text-[14px] font-bold tracking-widest text-white 
-              shadow-[0_6px_20px_rgba(166,124,101,0.4)] 
-              border border-white/50 backdrop-blur-md 
+              bg-gradient-to-r from-[#593E2B] via-[#6B4C35] to-[#7D5A3F] 
+              px-10 py-3.5 text-[15px] font-bold tracking-[0.2em] text-[#FFFBF5] 
+              shadow-[0_6px_20px_rgba(89,62,43,0.35)] 
+              border border-[#E4C590]/50 backdrop-blur-md 
               transition-all duration-300 
-              hover:-translate-y-1 hover:brightness-110 
-              hover:shadow-[0_8px_25px_rgba(166,124,101,0.6)] 
+              hover:-translate-y-1 hover:shadow-[0_8px_25px_rgba(89,62,43,0.5)] hover:border-[#E4C590]
               active:scale-95 rounded-full
             "
           >
-            跳進樹洞 ✨
+            進入秘境 ✨
           </button>
         </div>
 
